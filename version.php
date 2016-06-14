@@ -18,12 +18,14 @@
  * Version info.
  *
  * @package availability_week
- * @copyright 2014 The Open University
+ * @copyright 2016 Valery Fremaux (valery.fremaux@gmail.com)
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2014051200;
-$plugin->requires = 2014050800;
+$plugin->version = 2016060100;
+$plugin->requires = 2016051900;
 $plugin->component = 'availability_week';
+$plugin->release = '3.1.0 (Build 2016060100)';
+$plugin->maturity = MATURITY_RC;
