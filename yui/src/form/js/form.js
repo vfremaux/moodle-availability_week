@@ -1,5 +1,3 @@
-YUI.add('moodle-availability_week-form', function (Y, NAME) {
-
 /**
  * JavaScript for form editing week conditions.
  *
@@ -82,5 +80,3 @@ M.availability_week.form.fillValue = function(value, node) {
         value.w = field.substr(3);
     }
 };
-
-}, '@VERSION@', {"requires": ["base", "node", "event", "moodle-core_availability-form"]});
