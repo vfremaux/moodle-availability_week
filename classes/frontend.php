@@ -18,7 +18,7 @@
  * Front-end class.
  *
  * @package availability_week
- * @copyright 2014 The Open University
+ * @copyright 2016 Valery Fremaux (valery.fremaux@gmail.com)
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
