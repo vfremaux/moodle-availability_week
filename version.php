@@ -30,5 +30,5 @@ $plugin->component = 'availability_week';
 $plugin->release = '3.0.0 (Build 2016060100)';
 $plugin->maturity = MATURITY_RC;
 
-// non moodle attribute
+// non moodle attribute.
 $plugin->codeincrement = '3.0.0000';
