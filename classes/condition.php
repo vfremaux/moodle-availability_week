@@ -68,7 +68,7 @@ class condition extends \core_availability\condition {
 
         // Check condition.
         $now = self::get_time();
-        $allow = $now >= $this->weekfromstart * DAYSECS * 7 + $COURSE->startdate;
+        $allow = $now >= ($this->weekfromstart * DAYSECS * 7) + $COURSE->startdate;
 
         if ($not) {
             $allow = !$allow;
