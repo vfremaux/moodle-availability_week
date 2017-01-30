@@ -28,7 +28,7 @@ $plugin->version = 2016060100;
 $plugin->requires = 2016120500;
 $plugin->component = 'availability_week';
 $plugin->release = '3.2.0 (Build 2016060100)';
-$plugin->maturity = MATURITY_RC;
+$plugin->maturity = MATURITY_STABLE;
 
 // Non moodle attributes.
 $plugin->codeincrement = '3.2.0000';
