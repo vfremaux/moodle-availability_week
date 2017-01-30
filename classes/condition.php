@@ -18,7 +18,7 @@
  * Date condition.
  *
  * @package availability_week
- * @copyright 2014 Valery Fremaux
+ * @copyright 2016 Valery Fremaux (valery.fremaux@gmail.com)
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -68,7 +68,7 @@ class condition extends \core_availability\condition {
 
         // Check condition.
         $now = self::get_time();
-        $allow = $now >= $this->weekfromstart * DAYSECS * 7 + $COURSE->startdate;
+        $allow = $now >= ($this->weekfromstart * DAYSECS * 7) + $COURSE->startdate;
 
         if ($not) {
             $allow = !$allow;
