@@ -60,7 +60,7 @@ M.availability_week.form.getNode = function(json) {
             var ancestorNode = input.ancestor('span.availability_week');
             M.core_availability.form.update();
         };
-        var root = Y.one('#fitem_id_availabilityconditionsjson');
+        var root = Y.one('.availability-field');
         root.delegate('change', function() {
              updateForm(this);
         }, '.availability_week select');
