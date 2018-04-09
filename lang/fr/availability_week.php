@@ -24,8 +24,12 @@
 
 $string['conditiontitle'] = 'Semaine du cours';
 $string['ajaxerror'] = 'Erreur de connexion serveur pour la conversion des temps';
+$string['configreferencedate'] = 'Date de référence';
+$string['configreferencedate_desc'] = 'Choisissez la date à partir de laquelle se calcule le délai d\'accessibilité';
 $string['description'] = 'Empêche l\'accès jusqu\'à une certaine semaine, relativement au début du cours.';
 $string['pluginname'] = 'Restriction sur la semaine';
 $string['full_week'] = 'Disponible à partir de la semaine <strong>{$a}</strong> à compter du début du cours';
 $string['short_week'] = 'Disponible en semaine <strong>{$a}</strong>';
 $string['title'] = 'Semaine';
+$string['coursestartdate'] = 'Date de début du cours';
+$string['userenroldate'] = 'Date d\'inscription';
