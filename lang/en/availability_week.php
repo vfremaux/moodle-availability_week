@@ -24,8 +24,12 @@
 
 $string['conditiontitle'] = 'Week from start';
 $string['ajaxerror'] = 'Error contacting server to convert times';
+$string['configreferencedate'] = 'Reference date';
+$string['configreferencedate_desc'] = 'Choose the date from which the week shift will be calculated on';
 $string['description'] = 'Prevent access until a specified week is reached relative to the course start date.';
 $string['pluginname'] = 'Restriction by week from start';
 $string['full_week'] = 'Available at week <strong>{$a}</strong> from course start date';
 $string['short_week'] = 'Available from week <strong>{$a}</strong>';
 $string['title'] = 'Week';
+$string['coursestartdate'] = 'Course start date';
+$string['userenroldate'] = 'User enrolment date';
