@@ -1,19 +1,21 @@
 YUI.add('moodle-availability_week-form', function (Y, NAME) {
 
-/**
+/*
  * JavaScript for form editing week conditions.
  *
  * @module moodle-availability_week-form
  */
+// jshint undef:false, unused:false
+
 M.availability_week = M.availability_week || {};
 
-/**
+/*
  * @class M.availability_week.form
  * @extends M.core_availability.plugin
  */
 M.availability_week.form = Y.Object(M.core_availability.plugin);
 
-/**
+/*
  * Groupings available for selection (alphabetical order).
  *
  * @property weeks
@@ -21,7 +23,7 @@ M.availability_week.form = Y.Object(M.core_availability.plugin);
  */
 M.availability_week.form.weeks = null;
 
-/**
+/*
  * Initialises this plugin.
  *
  * @method initInner
@@ -35,9 +37,9 @@ M.availability_week.form.initInner = function(weeksfromstart) {
 M.availability_week.form.getNode = function(json) {
     // Create HTML structure.
     var strings = M.str.availability_week;
-    var html = '<span class="availability-group"><label>' + strings.conditiontitle + ' ' +
-            '<select name="field">' +
-            '<option value="choose">' + M.str.moodle.choosedots + '</option>';
+    var html = '<span class="availability-group"><label>' + strings.conditiontitle;
+    html += ' <select name="field">';
+    html += '<option value="choose">' + M.str.moodle.choosedots + '</option>';
     var fieldInfo;
     for (var i = 0; i < this.weeks.length; i++) {
         fieldInfo = this.weeks[i];
@@ -83,4 +85,5 @@ M.availability_week.form.fillValue = function(value, node) {
     }
 };
 
-}, '@VERSION@', {"requires": ["base", "node", "event", "moodle-core_availability-form"]});
+
+}, '@VERSION@', {"requires": ["base", "node", "event", "io", "moodle-core_availability-form"]});
