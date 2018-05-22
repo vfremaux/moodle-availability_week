@@ -14,21 +14,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Version info.
- *
- * @package availability_week
- * @copyright 2016 Valery Fremaux (valery.fremaux@gmail.com)
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+namespace availability_week\privacy;
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2017022600;
-$plugin->requires = 2018042700;
-$plugin->component = 'availability_week';
-$plugin->release = '3.5.0 (Build 2017022600)';
-$plugin->maturity = MATURITY_STABLE;
-
-// Non Moodle attributes.
-$plugin->codeincrement = '3.5.0001';
+class provider implements \core_privacy\local\metadata\null_provider {
+}
