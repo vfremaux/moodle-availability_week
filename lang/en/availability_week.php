@@ -22,6 +22,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+// Privacy.
+$string['privacy:metadata'] = "The Weeks Availability condition do not manipulate any data belonging to users";
+
 $string['conditiontitle'] = 'Week from start';
 $string['ajaxerror'] = 'Error contacting server to convert times';
 $string['configreferencedate'] = 'Reference date';
