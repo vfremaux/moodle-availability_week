@@ -27,8 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
 
-    $options = array(0 => get_string('coursestartdate', 'availability_week'),
-                     1 => get_string('userenroldate', 'availability_week'));
+    $options = [0 => get_string('coursestartdate', 'availability_week'),
+                     1 => get_string('userenroldate', 'availability_week')];
 
     $key = 'availability_week/referencedate';
     $label = get_string('configreferencedate', 'availability_week');

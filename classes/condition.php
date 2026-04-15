@@ -18,19 +18,20 @@
  * Date condition.
  *
  * @package availability_week
- * @copyright 2016 Valery Fremaux (valery.fremaux@gmail.com)
+ * @author      Valery Fremaux (valery.fremaux@gmail.com)
+ * @copyright   2017 Valery Fremaux (activeprolearn.com)
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 namespace availability_week;
 
-defined('MOODLE_INTERNAL') || die();
+// phpcs:disable moodle.Commenting.ValidTags.Invalid
 
 /**
  * Week from course start condition.
  *
  * @package availability_week
- * @copyright 2014 The Open University
+ * @author      Valery Fremaux (valery.fremaux@gmail.com)
+ * @copyright   2017 Valery Fremaux (activeprolearn.com)
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class condition extends \core_availability\condition {
@@ -54,23 +55,40 @@ class condition extends \core_availability\condition {
         }
     }
 
+    /**
+     * Save.
+     */
     public function save() {
-        return (object)array('type' => 'week',
-                'w' => $this->weekfromstart);
+        return (object)['type' => 'week',
+                'w' => $this->weekfromstart];
     }
 
+    /**
+     * Checks the target is available
+     * @param bool $not
+     * @param \core_availability\info $info
+     * @param bool $grabthelot
+     * @param int $userid
+     * @return boolean
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function is_available($not, \core_availability\info $info, $grabthelot, $userid) {
         return $this->is_available_for_all($not);
     }
 
+    /**
+     * Checks the target is globally available
+     * @param bool $not
+     * @return boolean
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
     public function is_available_for_all($not = false) {
-        global $COURSE;
 
         $referencedate = $this->get_reference_date();
 
         // Check condition.
         $now = self::get_time();
-        $allow = $now >= ($this->weekfromstart * WEEKSECS) + $referencedate;
+        $allow = $now >= ((int) $this->weekfromstart * (int) WEEKSECS) + $referencedate;
 
         if ($not) {
             $allow = !$allow;
@@ -79,12 +97,16 @@ class condition extends \core_availability\condition {
         return $allow;
     }
 
+    /**
+     * Get the reference date to calculate shift from
+     * @return integer date
+     */
     protected function get_reference_date() {
         global $COURSE, $USER, $DB;
 
         $config = get_config('availability_week');
 
-        if (@$config->referencedate == 0) {
+        if (($config->referencedate ?? 0) == 0) {
             // Calculate from course start date.
             $referencedate = $COURSE->startdate;
         } else {
@@ -105,7 +127,7 @@ class condition extends \core_availability\condition {
                 GROUP BY
                     ue.userid
             ';
-            if ($lowest = $DB->get_record_sql($sql, array($COURSE->id, $USER->id))) {
+            if ($lowest = $DB->get_record_sql($sql, [$COURSE->id, $USER->id])) {
                 $referencedate = $lowest->minenroltime;
             } else {
                 // This should not happen but some role assigned users NON enrolled might fall into that case.
@@ -116,10 +138,25 @@ class condition extends \core_availability\condition {
         return $referencedate;
     }
 
+    /**
+     * Gets a condition description for printing
+     * @param bool $full
+     * @param bool $not
+     * @param info $info
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function get_description($full, $not, \core_availability\info $info) {
         return $this->get_either_description($not, false);
     }
 
+    /**
+     * Gets a condition description for printing
+     * @param bool $full
+     * @param bool $not
+     * @param info $info
+     * @return string
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function get_standalone_description(
             $full, $not, \core_availability\info $info) {
         return $this->get_either_description($not, true);
@@ -131,14 +168,19 @@ class condition extends \core_availability\condition {
      *
      * @param bool $not True if NOT is in force
      * @param bool $standalone True to use standalone lang strings
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     protected function get_either_description($not, $standalone) {
 
         $satag = $standalone ? 'short_' : 'full_';
         return get_string($satag . 'week', 'availability_week',
-                self::show_week($this->weekfromstart));
+                self::show_week());
     }
 
+    /**
+     * Debug String.
+     * @return int
+     */
     protected function get_debug_string() {
         return $this->weekfromstart;
     }
@@ -158,18 +200,24 @@ class condition extends \core_availability\condition {
      * Shows a time either as a date or a full date and time, according to
      * user's timezone.
      *
-     * @param int $week the relative week shift from course start
      * @param bool $dateonly If true, uses date only
-     * @param bool $until If true, and if using date only, shows previous date
      * @return string Date
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
-    protected function show_week($week, $dateonly = false) {
-        global $COURSE;
-
-        $time = $this->get_reference_date() + ($this->weekfromstart * WEEKSECS);
-        return '+'.$this->weekfromstart.' ('.userdate($time, get_string($dateonly ? 'strftimedate' : 'strftimedatetime', 'langconfig')).')';
+    protected function show_week($dateonly = false) {
+        $time = $this->get_reference_date() + ((int) $this->weekfromstart * (int) WEEKSECS);
+        $dformat = get_string($dateonly ? 'strftimedate' : 'strftimedatetime', 'langconfig');
+        return '+'.$this->weekfromstart.' ('.userdate($time, $dformat).')';
     }
 
+    /**
+     * After restore function.
+     * @param int $restoreid
+     * @param int $courseid
+     * @param \base_logger $logger
+     * @param string $name
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function update_after_restore($restoreid, $courseid, \base_logger $logger, $name) {
         return true;
     }
