@@ -24,12 +24,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2025022100;
+$plugin->version = 2026041300;
 $plugin->requires = 2022041900;
 $plugin->component = 'availability_week';
-$plugin->release = '4.5.0 (Build 2025022100)';
+$plugin->release = '5.1.0 (Build 2026041300)';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->supported = [401, 405];
+$plugin->supported = [500, 503];
 
 // Non Moodle attributes.
-$plugin->codeincrement = '4.5.0001';
+$plugin->codeincrement = '5.1.0001';
+$plugin->privacy = 'public';
