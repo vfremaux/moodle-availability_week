@@ -17,11 +17,12 @@
 /**
  * Date condition.
  *
- * @package availability_week
- * @author      Valery Fremaux (valery.fremaux@gmail.com)
- * @copyright   2017 Valery Fremaux (activeprolearn.com)
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     availability_week
+ * @author      Valery Fremaux (valery@gmail.com)
+ * @copyright   2016 onwards Valery Fremaux (valery.fremaux@gmail.com)
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL
  */
+
 namespace availability_week;
 
 // phpcs:disable moodle.Commenting.ValidTags.Invalid
@@ -29,10 +30,10 @@ namespace availability_week;
 /**
  * Week from course start condition.
  *
- * @package availability_week
+ * @package     availability_week
  * @author      Valery Fremaux (valery.fremaux@gmail.com)
  * @copyright   2017 Valery Fremaux (activeprolearn.com)
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class condition extends \core_availability\condition {
 

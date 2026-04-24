@@ -17,11 +17,12 @@
 /**
  * Front-end class.
  *
- * @package availability_week
- * @author      Valery Fremaux (valery.fremaux@gmail.com)
- * @copyright   2017 Valery Fremaux (activeprolearn.com)
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     availability_week
+ * @author      Valery Fremaux (valery@gmail.com)
+ * @copyright   2017 onwards Valery Fremaux (valery.fremaux@gmail.com)
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace availability_week;
 
 // phpcs:disable moodle.Commenting.ValidTags.Invalid
