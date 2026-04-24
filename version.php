@@ -33,3 +33,4 @@ $plugin->supported = [401, 405];
 
 // Non Moodle attributes.
 $plugin->codeincrement = '4.5.0001';
+$plugin->privacy = 'public';
