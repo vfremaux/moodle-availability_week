@@ -42,7 +42,7 @@ M.availability_week.form.getNode = function(json) {
     for (var i = 0; i < this.weeks.length; i++) {
         fieldInfo = this.weeks[i];
         // String has already been escaped using format_string.
-        html += '<option value="w_' + fieldInfo.field + '">' + fieldInfo.display + '</option>';
+        html += '<option value="w_' + fieldInfo.w + '">' + fieldInfo.display + '</option>';
     }
     html += '</select></label></span>';
     var node = Y.Node.create('<span>' + html + '</span>');
@@ -77,7 +77,7 @@ M.availability_week.form.getNode = function(json) {
 
 M.availability_week.form.fillValue = function(value, node) {
     // Set field.
-    var field = node.one('select[name=field]').get('value');
+    var field = node.one('select[name=w]').get('value');
     if (field.substr(0, 3) === 'w_') {
         value.w = field.substr(3);
     }
