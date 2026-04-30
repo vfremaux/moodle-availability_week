@@ -60,8 +60,10 @@ class condition extends \core_availability\condition {
      * Save.
      */
     public function save() {
-        return (object)['type' => 'week',
-                'w' => $this->weekfromstart];
+        return (object)[
+            'type' => 'week',
+            'w' => $this->weekfromstart,
+        ];
     }
 
     /**
