@@ -36,9 +36,14 @@ M.availability_week.form.initInner = function(weeksfromstart) {
 
 M.availability_week.form.getNode = function(json) {
     // Create HTML structure.
+
+    if (json.w === undefined) {
+        json.w = '';
+    }
+
     var strings = M.str.availability_week;
     var html = '<span class="availability-group"><label>' + strings.conditiontitle;
-    html += ' <select name="field">';
+    html += ' <select name="field" class="custom-select">';
     html += '<option value="choose">' + M.str.moodle.choosedots + '</option>';
     var fieldInfo;
     for (var i = 0; i < this.weeks.length; i++) {
@@ -50,8 +55,7 @@ M.availability_week.form.getNode = function(json) {
     var node = Y.Node.create('<span>' + html + '</span>');
 
     // Set initial values if specified.
-    if (json.w !== undefined &&
-            node.one('select[name=field] > option[value=w_' + json.w + ']')) {
+    if (json.w !== undefined) {
         node.one('select[name=field]').set('value', 'w_' + json.w);
     }
 
@@ -60,28 +64,26 @@ M.availability_week.form.getNode = function(json) {
         M.availability_week.form.addedEvents = true;
         var updateForm = function(input) {
             var ancestorNode = input.ancestor('span.availability_week');
-            var op = ancestorNode.one('select[name=op]');
-            var novalue = (op.get('value') === 'isempty' || op.get('value') === 'isnotempty');
-            ancestorNode.one('input[name=value]').set('disabled', novalue);
             M.core_availability.form.update();
         };
-        var root = Y.one('#fitem_id_availabilityconditionsjson');
+
+        var root = Y.one('.availability-field');
         root.delegate('change', function() {
              updateForm(this);
-        }, '.availability_week select');
-        root.delegate('change', function() {
-             updateForm(this);
-        }, '.availability_week input[name=value]');
+        }, '.availability_week select[name=field]');
     }
 
     return node;
 };
 
+/*
+ * Called when value changes.
+ */
 M.availability_week.form.fillValue = function(value, node) {
     // Set field.
     var field = node.one('select[name=field]').get('value');
-    if (field.substr(0, 3) === 'w_') {
-        value.w = field.substr(3);
+    if (field.substr(0, 2) === 'w_') {
+        value.w = field.substr(2);
     }
 };
 
