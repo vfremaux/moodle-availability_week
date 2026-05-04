@@ -24,10 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2026041300;
+$plugin->version = 2026041301;
 $plugin->requires = 2022041900;
 $plugin->component = 'availability_week';
-$plugin->release = '5.1.0 (Build 2026041300)';
+$plugin->release = '5.1.0 (Build 2026041301)';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->supported = [500, 503];
 
