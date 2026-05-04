@@ -17,10 +17,10 @@
 /**
  * Language strings.
  *
- * @package availability_week
- * @author      Valery Fremaux (valery.fremaux@gmail.com)
- * @copyright 2016 Valery Fremaux (https://www.activeprolearn.com)
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package       availability_week
+ * @author        Valery Fremaux (valery.fremaux@gmail.com)
+ * @copyright     2016 Valery Fremaux (https://www.activeprolearn.com)
+ * @license       http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['ajaxerror'] = 'Error contacting server to convert times';
@@ -28,7 +28,7 @@ $string['conditiontitle'] = 'Week from start';
 $string['configreferencedate'] = 'Reference date';
 $string['configreferencedate_desc'] = 'Choose the date from which the week shift will be calculated on';
 $string['coursestartdate'] = 'Course start date';
-$string['description'] = 'Prevent access until a specified week is reached relative to the course start date.';
+$string['description'] = 'Prevent access until a specified week is reached.';
 $string['full_week'] = 'Available at week <strong>{$a}</strong> from course start date';
 $string['pluginname'] = 'Restriction by week from start';
 $string['privacy:metadata'] = "The Weeks Availability condition do not manipulate any data belonging to users";
