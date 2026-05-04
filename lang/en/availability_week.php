@@ -17,10 +17,10 @@
 /**
  * Language strings.
  *
- * @package 	availability_week
- * @author      Valery Fremaux (valery.fremaux@gmail.com)
- * @copyright 	2016 Valery Fremaux (https://www.activeprolearn.com)
- * @license 	http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package       availability_week
+ * @author        Valery Fremaux (valery.fremaux@gmail.com)
+ * @copyright     2016 Valery Fremaux (https://www.activeprolearn.com)
+ * @license       http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['ajaxerror'] = 'Error contacting server to convert times';
